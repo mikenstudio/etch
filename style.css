@@ -2,4 +2,69 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .first-color { 
+	background: #222831; 
+}
+	
+.second-color { 
+	background: #393e46; 
+}
+
+.third-color { 
+	background: #00adb5; 
+}
+
+.fourth-color { 
+	background: #00fff5; 
+} */
+
+.main {
+  background-color: #222831;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 80px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.header {
+  /* border: 2px solid white; */
+  /* color: #00adb5; */
+  color: #00fff5;
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+}
+
+.userInput {
+  /* color: #00adb5; */
+  color: #00fff5;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+#rows {
+  width: 50px;
+  text-align: center;
+}
+
+.sketch-box {
+  border: 5px solid #00adb5;
+  border-radius: 20px;
+  background-color: #393e46;
+  min-height: 500px;
+  min-width: 500px;
+  max-height: 650px;
+  max-width: 650px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
