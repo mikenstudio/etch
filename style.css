@@ -46,6 +46,7 @@
   width: 500px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   font-size: 1.5rem;
 }
@@ -53,6 +54,21 @@
 #rows {
   width: 50px;
   text-align: center;
+  height: 100%;
+  border-radius: 5px;
+  border: 2px solid #00adb5;
+}
+
+#message {
+  color: white;
+  font-size: 1.6rem;
+}
+
+#generate {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #00adb5;
+  width: 8rem;
 }
 
 .sketch-box {
@@ -63,8 +79,37 @@
   min-width: 500px;
   max-height: 650px;
   max-width: 650px;
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 1px;
+  padding: 5px;
+  border-radius: 0px;
 }
+
+.newRow {
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 1px;
+  border-radius: 0px;
+}
+
+.unclicked,
+.unclicked {
+  background-color: white;
+  height: auto;
+  width: auto;
+  flex: 1;
+  border-radius: 0px;
+}
+
+/* .clicked {
+  background-color: white;
+  height: auto;
+  width: auto;
+  flex: 1;
+} */

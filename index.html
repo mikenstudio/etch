@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <title>Etch-A-Sketch</title>
   </head>
   <body>
@@ -13,7 +13,9 @@
       <div class="userInput">
         <p>Squares Per Side:</p>
         <input type="number" min="1" max="100" id="rows" />
+        <button id="generate">Create Grid</button>
       </div>
+      <div id="message"></div>
       <div class="sketch-box"></div>
     </div>
   </body>
