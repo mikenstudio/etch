@@ -1,9 +1,11 @@
 const container = document.querySelector(".sketch-box");
 const generate = document.querySelector("#generate");
 const message = document.querySelector("#message");
+const eraserButton = document.querySelector("#eraser");
 let eraser = false;
 
 generate.addEventListener("click", generateGrid);
+eraserButton.addEventListener("click", toggleEraser);
 
 function generateGrid() {
   const numRows = document.querySelector("#rows").value;
@@ -31,5 +33,31 @@ function generateGrid() {
 }
 
 function toggleSquare() {
-  this.classList.add("clicked");
+  if (eraser) {
+    this.classList.add("unclicked");
+    this.classList.remove("clicked");
+  } else {
+    this.classList.add("clicked");
+    this.classList.remove("unclicked");
+  }
+}
+
+function eraserModeOn() {
+  message.innerText = "Erase Mode ENABLED";
+  eraser = true;
+  eraserButton.innerText = "Toggle Eraser (On)";
+}
+
+function eraserModeOff() {
+  message.innerText = "";
+  eraser = false;
+  eraserButton.innerText = "Toggle Eraser (Off)";
+}
+
+function toggleEraser() {
+  if (eraser) {
+    eraserModeOff();
+  } else {
+    eraserModeOn();
+  }
 }

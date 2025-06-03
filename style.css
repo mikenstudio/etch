@@ -43,7 +43,7 @@
 .userInput {
   /* color: #00adb5; */
   color: #00fff5;
-  width: 500px;
+  min-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,13 +62,14 @@
 #message {
   color: white;
   font-size: 1.6rem;
+  min-height: 2rem;
 }
 
-#generate {
+.buttons {
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #00adb5;
-  width: 8rem;
+  width: auto;
 }
 
 .sketch-box {
@@ -79,7 +80,7 @@
   min-width: 500px;
   max-height: 650px;
   max-width: 650px;
-  margin-top: 15px;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
