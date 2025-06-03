@@ -1,8 +1,11 @@
 const container = document.querySelector(".sketch-box");
 const generate = document.querySelector("#generate");
 const message = document.querySelector("#message");
+let eraser = false;
 
-generate.addEventListener("click", (e) => {
+generate.addEventListener("click", generateGrid);
+
+function generateGrid() {
   const numRows = document.querySelector("#rows").value;
   console.log(numRows);
   if (numRows < 1 || numRows > 100) {
@@ -20,8 +23,13 @@ generate.addEventListener("click", (e) => {
     for (let j = 0; j < numRows; j++) {
       const newBlock = document.createElement("div");
       newBlock.className = "unclicked";
+      newBlock.addEventListener("mouseover", toggleSquare);
       newRow.appendChild(newBlock);
     }
     container.appendChild(newRow);
   }
-});
+}
+
+function toggleSquare() {
+  this.classList.add("clicked");
+}

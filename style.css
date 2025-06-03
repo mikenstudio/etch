@@ -98,7 +98,6 @@
   border-radius: 0px;
 }
 
-.unclicked,
 .unclicked {
   background-color: white;
   height: auto;
@@ -107,9 +106,9 @@
   border-radius: 0px;
 }
 
-/* .clicked {
-  background-color: white;
+.clicked {
+  background-color: black;
   height: auto;
   width: auto;
   flex: 1;
-} */
+}
