@@ -8,6 +8,7 @@ generate.addEventListener("click", generateGrid);
 eraserButton.addEventListener("click", toggleEraser);
 
 function generateGrid() {
+  eraserModeOff();
   const numRows = document.querySelector("#rows").value;
   console.log(numRows);
   if (numRows < 1 || numRows > 100) {
