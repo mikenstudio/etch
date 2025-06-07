@@ -3,6 +3,22 @@ const generate = document.querySelector("#generate");
 const message = document.querySelector("#message");
 const eraserButton = document.querySelector("#eraser");
 let eraser = false;
+let mouseDown = false;
+
+document.body.addEventListener("mousedown", () => {
+  mouseDown = true;
+});
+
+document.body.addEventListener("mouseup", () => {
+  mouseDown = false;
+});
+
+document.body.addEventListener("keyup", (e) => {
+  console.log(e);
+  if (e.key === "Enter") {
+    generateGrid();
+  }
+});
 
 generate.addEventListener("click", generateGrid);
 eraserButton.addEventListener("click", toggleEraser);
@@ -26,20 +42,29 @@ function generateGrid() {
     for (let j = 0; j < numRows; j++) {
       const newBlock = document.createElement("div");
       newBlock.className = "unclicked";
-      newBlock.addEventListener("mouseover", toggleSquare);
+      newBlock.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        toggleSquare(e.target);
+      });
+      newBlock.addEventListener("mouseover", (e) => {
+        e.preventDefault();
+        if (mouseDown) {
+          toggleSquare(e.target);
+        }
+      });
       newRow.appendChild(newBlock);
     }
     container.appendChild(newRow);
   }
 }
 
-function toggleSquare() {
+function toggleSquare(block) {
   if (eraser) {
-    this.classList.add("unclicked");
-    this.classList.remove("clicked");
+    block.classList.add("unclicked");
+    block.classList.remove("clicked");
   } else {
-    this.classList.add("clicked");
-    this.classList.remove("unclicked");
+    block.classList.add("clicked");
+    block.classList.remove("unclicked");
   }
 }
 
