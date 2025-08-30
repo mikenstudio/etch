@@ -1,142 +1,197 @@
+/* Base & Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
 body {
   height: 100%;
+  font-family: "Fira Sans", sans-serif;
+  background-color: black;
+  color: white;
 }
 
-/* .first-color { 
-	background: #222831; 
-}
-	
-.second-color { 
-	background: #393e46; 
-}
-
-.third-color { 
-	background: #00adb5; 
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
 }
 
-.fourth-color { 
-	background: #00fff5; 
-} */
+a:hover,
+a.active {
+  color: #15e6e6;
+  border-bottom: 3px solid #15e6e6;
+}
 
-.main {
-  background-color: #222831;
+/* Page Container */
+.page-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 80px;
-  align-items: center;
-  justify-content: flex-start;
 }
 
-main {
+/* Navigation */
+.nav {
+  padding: 2rem 2rem;
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+/* Home Content & Logo */
+.home-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.header {
-  /* border: 2px solid white; */
-  /* color: #00adb5; */
-  color: #00fff5;
-  font-weight: 700;
-  font-size: 2rem;
-  display: flex;
+
+.logo-block .logo {
+  font-weight: 500;
+  user-select: none;
 }
 
+.studio {
+  color: #15e6e6;
+  font-weight: 900;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 5rem 2rem 4rem;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.page-content h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #15e6e6;
+}
+
+/* Center content */
+.center-content {
+  margin: 2rem auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* User Input */
 .userInput {
-  /* color: #00adb5; */
-  color: #00fff5;
-  min-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
 }
 
-#rows {
-  width: 50px;
+.userInput input {
+  width: 60px;
   text-align: center;
   height: 40px;
   border-radius: 5px;
-  border: 2px solid #00adb5;
+  border: 2px solid #15e6e6;
   font-size: 1.2rem;
+  background-color: #222;
+  color: #fff;
 }
 
-#message {
-  color: white;
-  font-size: 1.6rem;
-  min-height: 2rem;
-}
-
-.buttons {
-  padding: 10px;
+.userInput button {
+  padding: 8px 12px;
   border-radius: 5px;
-  border: 2px solid #00adb5;
-  width: auto;
+  border: 2px solid #15e6e6;
+  background-color: #222;
+  color: #15e6e6;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
+.userInput button:hover {
+  background-color: #15e6e6;
+  color: black;
+}
+
+/* Sketch Box */
 .sketch-box {
-  border: 5px solid #00adb5;
-  border-radius: 20px;
-  background-color: #393e46;
-  min-height: 500px;
-  min-width: 500px;
-  max-height: 650px;
-  max-width: 650px;
-  margin-top: 5px;
+  border: 5px solid #15e6e6;
+  border-radius: 15px;
+  background-color: #3a4042;
+  width: 500px;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  align-items: stretch;
   gap: 1px;
   padding: 5px;
-  border-radius: 0px;
 }
 
 .newRow {
-  flex: 1;
   display: flex;
-  justify-content: stretch;
-  align-items: stretch;
+  flex: 1;
   gap: 1px;
-  border-radius: 0px;
 }
 
 .unclicked {
-  background-color: white;
-  height: auto;
-  width: auto;
   flex: 1;
-  border-radius: 0px;
+  background-color: white;
 }
 
 .clicked {
-  background-color: black;
-  height: auto;
-  width: auto;
   flex: 1;
-  border-radius: 0px;
+  background-color: black;
 }
 
-footer {
-  display: flex;
-  color: #00fff5;
-  justify-content: center;
-  align-items: center;
+/* Message */
+#message {
+  color: #15e6e6;
+  font-size: 1.2rem;
+  min-height: 1.5rem;
+  text-align: center;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #111;
+  color: #15e6e6;
   font-weight: 600;
 }
 
-#eraser {
-  min-width: 170px;
-  text-align: center;
+/* Media Queries */
+@media (max-width: 600px) {
+  .page-content {
+    margin: 2rem 1rem;
+  }
+
+  .sketch-box {
+    width: 95vw;
+    height: 95vw;
+  }
+
+  .userInput {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .userInput input {
+    width: 80%;
+  }
 }
